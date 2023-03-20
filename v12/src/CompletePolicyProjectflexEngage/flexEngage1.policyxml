@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<policies>
+  <policy policyType="flexengage" policyName="flexEngage1" policyTemplate="online_v1_oauth2_credentials">
+    <credentialName>CompletePolicyProjectflexEngage_flexEngage1</credentialName>
+    <applicationVersion>v1</applicationVersion>
+    <applicationType>online</applicationType>
+    <authenticationMethod>OAUTH2_CREDENTIALS</authenticationMethod>
+    <brandId>REPLACE_WITH_YOUR_MERCHANT_ID</brandId>
+  </policy>
+</policies>
