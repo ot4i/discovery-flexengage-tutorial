@@ -245,13 +245,13 @@
                                         "details": "In the Integration Explorer view of the Toolkit, right-click TEST_SERVER and select the option to Start."
                                         },
                                         {
-                                        "details": "Once the server has started, drag and drop deploy the policy project <span class='application'>ExamplePolicyProjectflexEngage</span> in to TEST_SERVER."
+                                        "details": "Once the server has started, drag and drop deploy the policy project <span class='application'>ExamplePolicyProjectDropbox</span> in to TEST_SERVER."
                                         },										
 										{
-                                        "details": "Return to <span class='resource'>ExampleflexEngageFlow.msgflow</span> and click the Flow Exerciser icon <img src='http://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png' alt='' /> to start testing the flow."
+                                        "details": "Return to <span class='resource'>ExampleDropboxFlow.msgflow</span> and click the Flow Exerciser icon <img src='http://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png' alt='' /> to start testing the flow."
                                         },
 										{
-                                        "details": "Click the Send Message icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' />. Create a new test message to invoke the HTTP Input node. Use an empty JSON input message like this: <code>{}</code>. Click Send and your message is sent to the HTTPInput node. You will receive an empty JSON message echoed back as a reply. You may also see a highlighted path through the flow. Sometimes there may be a short pause before the data is returned from flexEngage, so you may need to click the View Path icon <img src='http://ot4i.github.io/iib-tutorials/images/icons/iib/viewPath.png' alt='View path' /> in the Flow Exerciser toolbar in order to see the highlighted path carry on past the flexEngage Request node and into a Trace node at the end of the message flow. Click on the highlighted path coming out of the flexEngage Request node to see the data which has been retrieved."
+                                        "details": "Click the Send Message icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' />. Create a new test message to invoke the HTTP Input node. You need to use a JSON input message which describes the file you would like to download from Dropbox like this: <code>{\"path\": \"/ExampleFile.txt\", \"fileType\": \"Text\"}</code>. This example retrieves a file named ExampleFile from the root folder of the Dropbox account. Click Send and your message is sent to the HTTPInput node. You will receive the same JSON message echoed back as a reply. You may also see a highlighted path through the flow. Sometimes there may be a short pause before the data is returned from Dropbox, so you may need to click the View Path icon <img src='http://ot4i.github.io/iib-tutorials/images/icons/iib/viewPath.png' alt='View path' /> in the Flow Exerciser toolbar in order to see the highlighted path carry on past the Dropbox Request node and into a Trace node at the end of the message flow. Click on the highlighted path coming out of the Dropbox Request node to see the data which has been retrieved. The output from the Dropbox node should be a JSON message which includes a field called fileContent that carries the text content of the file."
 										}
                                         ]
                                     }
@@ -288,8 +288,8 @@
 					[
 {
                              "title": "IBM Documentation link to ",
-                             "description": "flexEngage Request node",
-                             "link": "https://www.ibm.com/docs/en/app-connect/12.0?topic=nodes-flexengage-request-node",
+                             "description": "Dropbox Request node",
+                             "link": "https://www.ibm.com/docs/en/app-connect/12.0?topic=nodes-dropbox-request-node",
                              "type": "web"
                         },
 						{
