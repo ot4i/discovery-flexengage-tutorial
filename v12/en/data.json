@@ -257,24 +257,24 @@
                                     }
                             },							   
 							{
-								"section": "<b>Option 2: Using the alternative provided application named CompleteExampleflexEngage to test the tutorial scenario</b>",
+								"section": "<b>Option 2: Using the alternative provided application named CompleteExampleDropbox to test the tutorial scenario</b>",
                                 "steps": {
                                     "type": "ordered",
                                     "details": [                                      
                                         {
-										"details": "In order to reuse the completed application which is provided with this tutorial, you must configure your integration server with credentials for communicating with your flexEngage instance.  Launch a command console session, and run the following command to create these credentials:<br><code>mqsicredentials --work-dir &lt;YourToolkitWorkspace&gt;\\TEST_SERVER  --vault-key password123 --create --credential-type flexengage --credential-name CompletePolicyProjectflexEngage_flexEngage1 --username &lt;YourflexEngageUsername&gt; --password &lt;YourflexEngagePassword&gt;</code>"
+										"details": "In order to reuse the completed application which is provided with this tutorial, you must configure your integration server with credentials for communicating with your Dropbox instance.  Launch a command console session, and run the following command to create these credentials:<br><code>mqsicredentials --work-dir &lt;YourToolkitWorkspace&gt;\\TEST_SERVER  --vault-key password123 --create --credential-type dropbox --credential-name CompletePolicyProjectDropbox_Dropbox1 --client-id &lt;YourDropboxClientId&gt; --client-secret &lt;YourDropboxClientSecret&gt; --access-token &lt;YourDropboxAccessToken&gt;</code>"
 										},
 										{	
                                         "details": "Back in the Toolkit, in the Integration Explorer view, right-click <code>TEST_SERVER</code> and select the option to Start."
                                         },
                                         {
-                                        "details": "Drag and drop deploy the policy project <span class='application'>CompletePolicyProjectflexEngage</span> to <code>TEST_SERVER</code>."
+                                        "details": "Drag and drop deploy the policy project <span class='application'>CompletePolicyProjectDropbox</span> to <code>TEST_SERVER</code>."
                                         },
 										{
-                                        "details": "Return to <span class='resource'>CompleteExampleflexEngageFlow.msgflow</span> and click the Flow Exerciser icon <img src='http://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png' alt='' /> to start testing the flow."
+                                        "details": "Return to <span class='resource'>CompleteExampleDropboxFlow.msgflow</span> and click the Flow Exerciser icon <img src='http://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png' alt='' /> to start testing the flow."
 										},
 										{
-                                        "details": "Click the Send Message icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' />. Create a new test message to invoke the HTTP Input node. Use an empty JSON input message like this: <code>{}</code>. Click Send and your message is sent to the HTTPInput node. You will receive an empty JSON message echoed back as a reply. You may also see a highlighted path through the flow. Sometimes there may be a short pause before the data is returned from flexEngage, so you may need to click the View Path icon <img src='http://ot4i.github.io/iib-tutorials/images/icons/iib/viewPath.png' alt='View path' /> in the Flow Exerciser toolbar in order to see the highlighted path carry on past the flexEngage Request node and into a Trace node at the end of the message flow. Click on the highlighted path coming out of the flexEngage Request node to see the data which has been retrieved."
+                                        "details": "Click the Send Message icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' />. Create a new test message to invoke the HTTP Input node. You need to use a JSON input message which describes the file you would like to download from Dropbox like this: <code>{\"path\": \"/ExampleFile.txt\", \"fileType\": \"Text\"}</code>. This example retrieves a file named ExampleFile from the root folder of the Dropbox account. Click Send and your message is sent to the HTTPInput node. You will receive the same JSON message echoed back as a reply. You may also see a highlighted path through the flow. Sometimes there may be a short pause before the data is returned from Dropbox, so you may need to click the View Path icon <img src='http://ot4i.github.io/iib-tutorials/images/icons/iib/viewPath.png' alt='View path' /> in the Flow Exerciser toolbar in order to see the highlighted path carry on past the Dropbox Request node and into a Trace node at the end of the message flow. Click on the highlighted path coming out of the Dropbox Request node to see the data which has been retrieved. The output from the Dropbox node should be a JSON message which includes a field called fileContent that carries the text content of the file."
 										}
 									]
 								}
