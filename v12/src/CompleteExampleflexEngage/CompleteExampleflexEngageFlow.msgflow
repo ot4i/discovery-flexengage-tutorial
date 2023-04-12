@@ -25,7 +25,13 @@
       <nodes xmi:type="ComIbmWSReply.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_8" location="432,27">
         <translation xmi:type="utility:ConstantString" string="HTTP Reply"/>
       </nodes>
-      <nodes xmi:type="ComIbmApplicationConnectorRequest_flexengage.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="437,91" applicationConnectorType="flexengage">
+      <nodes xmi:type="ComIbmApplicationConnectorRequest_flexengage.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="437,91" applicationConnectorType="flexengage" action="RETRIEVEALL" businessObject="OrderEvent" displayName="Retrieve order events" schemaPrefix="gen/CompleteExampleflexEngageFlow.flexEngage_Request" policyUrl="{CompletePolicyProjectflexEngage}:flexEngage1" messageSetProperty="gen/CompleteExampleflexEngageFlow.flexEngage_Request.response.schema.json">
+        <filter>
+          <filterElementObject type="where">
+            <filterProperty propertyName="orderId" displayName="Order ID" propertyValue="202009171" compareAction=""/>
+          </filterElementObject>
+          <queryProperties limit="1" allowTruncation="false"/>
+        </filter>
         <translation xmi:type="utility:ConstantString" string="flexEngage Request"/>
       </nodes>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_2" targetNode="FCMComposite_1_4" sourceNode="FCMComposite_1_6" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
